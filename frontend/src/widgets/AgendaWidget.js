@@ -44,7 +44,7 @@ class AgendaWidget extends Component {
     }
 
     const events = this.state.events.map(event => (
-      <div className={`event ${moment().isAfter(moment(event.end.dateTime)) ? "passed" : ""}`} key={event.id}>
+      <div className={`event ${moment().isAfter(moment(event.end.dateTime)) ? "past" : ""}`} key={event.id}>
         <div className="event-time">{moment(event.start.dateTime).format("h:mm A")} - {moment(event.end.dateTime).format("h:mm A")}</div>
         <div className="event-title">{event.summary}</div>
       </div>
