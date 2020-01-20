@@ -2,7 +2,7 @@
 
 ![](https://user-images.githubusercontent.com/2646487/72759941-2f741200-3ba5-11ea-95b6-70d69a962174.png)
 
-This is a dashboard I created for personal use, built with Go and React. Itt shows things that are relevant to me throughout the day, and it's meant to be displayed on a 16:9 TV, which is why the UI is so big.
+This is a dashboard I created for personal use, built with Go and React. It shows things that are relevant to me throughout the day, and it's meant to be displayed on a 16:9 TV, which is why the UI is so big.
 
 Feel free to use and extend it. I added some tooling to hopefully make things more straightforward. If you are familiar with `make` and `npm`, it should be pretty easy. More documentation will come soon if I remember to add it.
 
