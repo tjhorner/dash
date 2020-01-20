@@ -1,6 +1,6 @@
 {
   "name": "dash",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "the cool epic dashboard",
   "scripts": {
     "postinstall": "cd frontend && npm install",
