@@ -7,7 +7,8 @@ class AgendaWidget extends Component {
   constructor() {
     super()
     this.state = {
-      events: null
+      events: null,
+      refreshInterval: null
     }
   }
 
@@ -17,7 +18,13 @@ class AgendaWidget extends Component {
   }
 
   componentDidMount() {
+    const refreshInterval = setInterval(() => { this.refreshEvents() }, 60000)
+    this.setState({ refreshInterval })
     this.refreshEvents()
+  }
+
+  componentWillUnmount() {
+    clearInterval(this.state.refreshInterval)
   }
   
   render() {
@@ -37,7 +44,7 @@ class AgendaWidget extends Component {
     }
 
     const events = this.state.events.map(event => (
-      <div className="event" key={event.id}>
+      <div className={`event ${moment().isAfter(moment(event.end.dateTime)) ? "passed" : ""}`} key={event.id}>
         <div className="event-time">{moment(event.start.dateTime).format("h:mm A")} - {moment(event.end.dateTime).format("h:mm A")}</div>
         <div className="event-title">{event.summary}</div>
       </div>

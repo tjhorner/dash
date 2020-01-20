@@ -7,7 +7,8 @@ class ClimateWidget extends Component {
     super()
     this.state = {
       weather: null,
-      thermostat: null
+      thermostat: null,
+      refreshInterval: null
     }
   }
 
@@ -21,9 +22,19 @@ class ClimateWidget extends Component {
     this.setState({ thermostat: data })
   }
 
-  componentDidMount() {
+  refreshAll() {
     this.refreshWeather()
     this.refreshThermostat()
+  }
+
+  componentDidMount() {
+    const refreshInterval = setInterval(() => { this.refreshAll() }, 10000)
+    this.setState({ refreshInterval })
+    this.refreshAll()
+  }
+
+  componentWillUnmount() {
+    clearInterval(this.state.refreshInterval)
   }
   
   render() {
