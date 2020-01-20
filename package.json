@@ -1,0 +1,18 @@
+{
+  "name": "dash",
+  "version": "1.0.0",
+  "description": "the cool epic dashboard",
+  "scripts": {
+    "postinstall": "cd frontend && npm install",
+    "start": "concurrently -c red,cyan \"npm:api\" \"npm:frontend\"",
+    "api": "DASH_LISTEN_ADDRESS=\":8000\" go run *.go",
+    "frontend": "cd frontend && BROWSER=none REACT_APP_API_BASE_URL=\"http://localhost:8000\" npm start",
+    "build": "make build",
+    "dist": "make dist"
+  },
+  "author": "TJ Horner <me@tjhorner.com>",
+  "license": "GPL-3.0",
+  "devDependencies": {
+    "concurrently": "^5.0.2"
+  }
+}

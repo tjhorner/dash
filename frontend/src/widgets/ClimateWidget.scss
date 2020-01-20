@@ -1,0 +1,37 @@
+.widget-climate {
+  .widget-content {
+    background: #95ddff;
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .weather-icon {
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    i {
+      font-size: 6em;
+    }
+  }
+
+  .weather-details {
+    font-size: 2em;
+    margin-left: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    div {
+      margin: 0;
+      margin-bottom: 4px;
+
+      &:last-of-type {
+        margin: 0;
+      }
+    }
+  }
+}

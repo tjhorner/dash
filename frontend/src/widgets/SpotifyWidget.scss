@@ -1,0 +1,40 @@
+.widget-spotify {
+  .widget-content {
+    background: #1DB954;
+    color: white;
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .album-art {
+    width: 150px;
+    height: 150px;
+    background-size: 150px auto;
+    flex-shrink: 0;
+    border-radius: 5px;
+  }
+
+  .track-details {
+    font-size: 2em;
+    margin-left: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    div {
+      margin: 0;
+      margin-bottom: 4px;
+
+      &:last-of-type {
+        margin: 0;
+      }
+
+      &.device {
+        font-size: 0.8em;
+        justify-self: end;
+      }
+    }
+  }
+}

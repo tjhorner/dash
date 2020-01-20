@@ -1,0 +1,20 @@
+.widget-commute {
+  .widget-content {
+    background: #2e9127;
+    color: white;
+    padding: 35px 10px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    font-size: 2em;
+  }
+
+  .time {
+    margin-top: 10px;
+    font-size: 2em;
+  }
+
+  .fa-subway {
+    margin-right: 5px;
+  }
+}

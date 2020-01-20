@@ -1,0 +1,52 @@
+.widget-agenda {
+  height: 100%;
+
+  .widget-content {
+    background: #ff8137;
+    color: white;
+    padding: 20px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+
+    .title {
+      font-size: 2.5em;
+      text-align: center;
+      font-weight: bold;
+      margin-bottom: 15px;
+    }
+
+    .no-events {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      text-align: center;
+      flex-grow: 1;
+      font-size: 3em;
+    }
+
+    .events {
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+      
+      .event {
+        display: flex;
+        flex-direction: column;
+        padding: 15px 0;
+        border-bottom: 1px solid white;
+
+        .event-title {
+          flex-grow: 1;
+          font-size: 2em;
+        }
+
+        .event-time {
+          justify-self: end;
+          font-size: 1.5em;
+          opacity: 0.75;
+        }
+      }
+    }
+  }
+}
