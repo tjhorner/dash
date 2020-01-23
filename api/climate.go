@@ -27,11 +27,11 @@ type ClimateAPI struct {
 
 // Configure implements API.Configure
 func (api *ClimateAPI) Configure() {
-	api.WeatherLocationLat = util.GetEnv("DASH_WEATHER_LOCATION_LAT", "")
-	api.WeatherLocationLng = util.GetEnv("DASH_WEATHER_LOCATION_LNG", "")
-	api.DarkSkyKey = util.GetEnv("DASH_DARK_SKY_KEY", "")
-	api.ThermostatdKey = util.GetEnv("DASH_THERMOSTATD_KEY", "")
-	api.ThermostatdHost = util.GetEnv("DASH_THERMOSTATD_HOST", "")
+	api.WeatherLocationLat = util.GetEnv("DASH_CLIMATE_LOCATION_LAT", "")
+	api.WeatherLocationLng = util.GetEnv("DASH_CLIMATE_LOCATION_LNG", "")
+	api.DarkSkyKey = util.GetEnv("DASH_CLIMATE_DARK_SKY_KEY", "")
+	api.ThermostatdKey = util.GetEnv("DASH_CLIMATE_THERMOSTATD_KEY", "")
+	api.ThermostatdHost = util.GetEnv("DASH_CLIMATE_THERMOSTATD_HOST", "")
 }
 
 // Prefix implements API.Prefix

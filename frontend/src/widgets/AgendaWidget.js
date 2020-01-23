@@ -43,7 +43,11 @@ class AgendaWidget extends Component {
       )
     }
 
-    const events = this.state.events.map(event => (
+    const events = this.state.events.filter(event => {
+      const isActuallyToday = moment(event.start.dateTime).isBetween(moment().startOf("day"), moment().endOf("day"))
+      const declined = event.attendees.find(at => at.self === true && at.responseStatus === "declined")
+      return isActuallyToday && !declined
+    }).map(event => (
       <div className={`event ${moment().isAfter(moment(event.end.dateTime)) ? "past" : ""}`} key={event.id}>
         <div className="event-time">{moment(event.start.dateTime).format("h:mm A")} - {moment(event.end.dateTime).format("h:mm A")}</div>
         <div className="event-title">{event.summary}</div>

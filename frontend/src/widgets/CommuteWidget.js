@@ -15,7 +15,7 @@ class CommuteWidget extends Component {
 
   async refreshTime() {
     const { data } = await axios.get(`${process.env.REACT_APP_API_BASE_URL || ""}/api/commute/time`)
-    this.setState({ time: data.travel_time_minutes })
+    this.setState({ time: data.time })
   }
 
   componentDidMount() {
@@ -35,7 +35,7 @@ class CommuteWidget extends Component {
       <div className="widget widget-commute">
         <div className="widget-content">
           <div><FontAwesomeIcon icon={faSubway}/> <strong>Time to Work</strong></div>
-          <div className="time">~{this.state.time} minutes</div>
+          <div className="time">~{this.state.time}</div>
         </div>
       </div>
     )

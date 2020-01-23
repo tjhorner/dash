@@ -77,7 +77,7 @@ func (api *AgendaAPI) getEvents(w http.ResponseWriter, r *http.Request) {
 	bod := time.Date(year, month, day, 0, 0, 0, 0, t.Location())
 	eod := time.Date(year, month, day, 23, 59, 59, 0, t.Location())
 
-	events, err := api.apiClient.Events.List("primary").TimeMin(bod.Format(time.RFC3339)).TimeMax(eod.Format(time.RFC3339)).Do()
+	events, err := api.apiClient.Events.List("primary").TimeMin(bod.Format(time.RFC3339)).TimeMax(eod.Format(time.RFC3339)).SingleEvents(true).Do()
 	if err != nil {
 		respondError(err, "ERR_CALENDAR_RESPONSE", w, r)
 		return
